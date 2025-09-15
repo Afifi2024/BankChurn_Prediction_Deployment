@@ -683,8 +683,8 @@ X = df.drop('Exited', axis=1)
 y = df['Exited']
 
 # Train/val/test split
-X_temp, X_test, y_temp, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
-X_train, X_val, y_train, y_val = train_test_split(X_temp, y_temp, test_size=0.25, random_state=1)
+X_temp, X_test, y_temp, y_test = train_test_split(X, y, test_size=0.5, random_state=1)
+X_train, X_val, y_train, y_val = train_test_split(X_temp, y_temp, test_size=0.5, random_state=1)
 
 # Feature scaling
 scaler = StandardScaler()
@@ -909,9 +909,9 @@ api.upload_folder(
 )
 
 import shutil
-shutil.make_archive('backend_files', 'zip', 'model_files')
+shutil.make_archive('model_files', 'zip', 'model_files')
 from google.colab import files
-files.download('backend_files.zip')
+files.download('model_files.zip')
 
 """## Model Performance Comparison and Final Model Selection
 
